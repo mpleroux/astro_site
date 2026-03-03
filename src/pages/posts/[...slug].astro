@@ -3,8 +3,14 @@ import { getCollection, render } from 'astro:content';
 import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
+  const allPosts = await getCollection('blog');
+
+  // Sort posts by publication date, newest first
+  const sortedPosts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return sortedPosts.map((post) => ({
     params: { slug: post.id },
     props: { post },
   }));
