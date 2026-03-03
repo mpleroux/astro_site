@@ -1,0 +1,28 @@
+---
+/**
+ * @typedef {Object} Props
+ * @property {string} platform
+ * @property {string} ext
+ * @property {string} [subdir] - Optional subdirectory
+ * @property {string} username
+ */
+
+const { platform, ext, subdir = '', username } = Astro.props;
+
+// Ensure subdir starts with a slash ONLY if it exists and doesn't have one
+const formattedSubdir =
+  subdir && !subdir.startsWith('/') ? `/${subdir}` : subdir;
+---
+
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
+</style>
+
+<a href={`https://${platform}${ext}${formattedSubdir}/${username}`}
+  >{platform}</a
+>
