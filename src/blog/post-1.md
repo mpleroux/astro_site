@@ -1,23 +1,18 @@
 ---
-title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+title: 'Starting from Scratch'
+pubDate: 2026-03-03
+description: 'First blog post'
+author: 'Michael LeRoux'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+    url: ''
+    alt: ''
+tags: ['personal', 'blog', 'astro']
 ---
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
-## What I've accomplished
+I haven't kept a blog since the early days of the web when I used Blogger, Movable Type, and WordPress. I miss having an corner of the internet to call my own that's not tied to social media ecosystems and all the unpleasant baggage that comes with them. Sometimes I wonder if I've lost the ability to write anything longer than the length of a tweet.
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+As a software engineer I have extra incentive to build a simple content-driven website from scratch and learn more about current JavaScript frameworks along the way. [Astro](https://astro.build/) seems to be one of the most popular options out there right now and I enjoyed working through their well-written ["Build a blog" tutorial](https://docs.astro.build/en/tutorial/0-introduction/). The blogging experience will be bare-bones and primarily a folder full of Markdown files that I maintain with a text editor. The VSCode extension [Front Matter CMS](https://frontmatter.codes/) sounds interesting and may be a way to manage some of that.
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+Progress will be slow as I become more familiar with everything that can be done with tools like Astro and Cloudinary. In addition to a personal blog I'd like to eventually host my favorite photos in a gallery and showcase other web development projects in a portfolio. It won't be the most original or attractive website at first, but it will be mine.
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
-
-## What's next
-
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+So with that in mind, here goes nothing.
