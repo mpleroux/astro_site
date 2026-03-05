@@ -1,3 +1,57 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-page-bg: var(--color-gray-300);
+  --color-page-text: var(--text-gray-800);
+  --color-header-bg: var(--color-gray-300);
+  --color-header-text: var(--text-gray-800);
+  --color-footer-bg: var(--color-gray-300);
+  --color-footer-text: var(--text-gray-800);
+}
+
+/* base styles after normalize */
+@layer base {
+  body {
+    @apply bg-page-bg text-page-text;
+  }
+
+  header {
+    @apply bg-header-bg text-header-text;
+  }
+
+  footer {
+    @apply bg-footer-bg text-footer-text;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold tracking-tight;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  a {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+
+  p,
+  ul,
+  ol {
+    @apply my-4;
+  }
+  ul {
+    @apply list-disc list-inside;
+  }
+  ol {
+    @apply list-decimal list-inside;
+  }
+}
+
+/* convert to Tailwind */
+
 html {
   font-family: sans-serif;
 }
@@ -42,8 +96,7 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* nav styles */
-
+/* Hamburger menu */
 .menu {
   background-color: #0d0950;
   border: none;
