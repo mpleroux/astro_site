@@ -1,7 +1,7 @@
 ---
-title: 'Starting from Scratch'
+title: 'Starting from scratch'
 pubDate: 2026-03-03
-description: 'First blog post'
+description: ''
 author: 'Michael LeRoux'
 image:
     url: ''
