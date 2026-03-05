@@ -4,7 +4,6 @@ import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog');
-
   // Sort posts by publication date, newest first
   const sortedPosts = allPosts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),

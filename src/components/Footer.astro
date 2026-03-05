@@ -2,17 +2,8 @@
 import Social from './Social.astro';
 ---
 
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
-
-<footer>
-  <Social platform="bsky" ext=".app" subdir="/profile" username="astro.build" />
-  <Social platform="xcancel" ext=".com" username="astrodotbuild" />
-  <Social platform="github" ext=".com" username="withastro" />
-  <Social platform="youtube" ext=".com" username="astrodotbuild" />
+<footer class="flex mt-1">
+  <Social url="https://github.com/mpleroux" name="GitHub" />
+  <Social url="https://www.linkedin.com/in/michaelleroux/" name="LinkedIn" />
+  <Social url="https://bsky.app/profile/rouleau36.bsky.social" name="Bluesky" />
 </footer>
