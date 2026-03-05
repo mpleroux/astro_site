@@ -1,30 +1,30 @@
 @import 'tailwindcss';
 
+/* define the custom dark variant for utility classes like dark:text-white */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  /* set default (light mode) values */
   --color-page-bg: var(--color-gray-300);
-  --color-page-text: var(--text-gray-800);
-  --color-header-bg: var(--color-gray-300);
-  --color-header-text: var(--text-gray-800);
-  --color-footer-bg: var(--color-gray-300);
-  --color-footer-text: var(--text-gray-800);
+  --color-page-text: var(--color-gray-800);
+  --color-link: var(--color-gray-600);
+}
+
+/* manual toggle: if .dark class is on <html> */
+.dark {
+  --color-page-bg: var(--color-gray-800);
+  --color-page-text: var(--color-gray-300);
+  --color-link: var(--color-blue-500);
 }
 
 /* base styles after normalize */
 @layer base {
   body {
-    @apply bg-page-bg text-page-text;
-  }
-
-  header {
-    @apply bg-header-bg text-header-text;
-  }
-
-  footer {
-    @apply bg-footer-bg text-footer-text;
+    @apply bg-page-bg text-page-text transition-colors duration-300;
   }
 
   h1 {
-    @apply text-4xl font-extrabold tracking-tight;
+    @apply text-4xl font-bold tracking-tight;
   }
   h2 {
     @apply text-3xl font-bold;
@@ -34,7 +34,7 @@
   }
 
   a {
-    @apply text-blue-600 underline hover:text-blue-800;
+    @apply text-link underline hover:opacity-80 transition-opacity;
   }
 
   p,
@@ -50,60 +50,13 @@
   }
 }
 
-/* convert to Tailwind */
-
-html {
-  font-family: sans-serif;
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .menu {
-  background-color: #fff;
-  color: #000;
-}
-
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
-  color: #0d0950;
-}
-
-.dark .nav-links a {
-  color: #fff;
-}
-
-.dark a {
-  color: #ff9776;
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
+/* TODO replace with Tailwind classes in markup */
 
 /* Hamburger menu */
 .menu {
-  background-color: #0d0950;
   border: none;
-  color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 5px 10px;
 }
 
 .nav-links {
@@ -115,17 +68,10 @@ h1 {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--text); /* #0d0950; */
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: #ff9776;
 }
 
 :has(.menu[aria-expanded='true']) .nav-links {
@@ -134,7 +80,6 @@ h1 {
 
 @media screen and (min-width: 636px) {
   .nav-links {
-    margin-left: 5em;
     display: block;
     position: static;
     width: auto;
@@ -143,7 +88,6 @@ h1 {
 
   .nav-links a {
     display: inline-block;
-    padding: 15px 20px;
   }
 
   .menu {
