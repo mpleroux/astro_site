@@ -5,4 +5,5 @@ A project to build a personal website using Astro. This will eventually include 
 ## Technologies used so far
 
 - [Astro](https://astro.build/)
+- [Prettier](https://prettier.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
