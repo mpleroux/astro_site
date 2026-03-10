@@ -9,7 +9,7 @@ image:
 tags: ['astro', 'tailwind', 'prettier', 'vscode']
 ---
 
-Yesterday I spent some time getting VSCode [Prettier](https://prettier.io/) plugins to work with both [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). I wanted to have Prettier automatically reorder Tailwind's utility classes in both `.html` files and `.astro` component/page files in this [astro_site](https://github.com/mpleroux/astro_site) project.
+Yesterday I spent some time getting VSCode [Prettier](https://prettier.io/) plugins to work with both [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). I wanted Prettier to automatically reorder Tailwind's utility classes in HTML, CSS, and Astro files.
 
 Here are the two VSCode plugins in question:
 
@@ -49,11 +49,11 @@ I opted for [Tailwind's suggestion](https://github.com/tailwindlabs/prettier-plu
 }
 ```
 
-## Final troubleshooting
+## Troubleshooting
 
 I could see Tailwind classes being reordered in HTML and CSS files, but nothing was being changed in `.astro` files.
 
-I verified there were no errors in VSCode's Output panel for Prettier.
+I verified there were no errors in VSCode's Output panel for Prettier:
 
 ```log
 ["INFO" - 9:10:30 AM] Using config file at /astro_site/.prettierrc
@@ -68,18 +68,20 @@ I verified there were no errors in VSCode's Output panel for Prettier.
 }
 ```
 
-I checked if Prettier was able to change `.astro` files using the CLI via the terminal.
+I checked if Prettier was able to change `.astro` files using the CLI via the terminal. It worked.
 
 ```sh
 npx prettier --write src/layouts/BaseLayout.astro # this worked!
 ```
 
-It turns out I had overlooked a setting in the [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#formatting-with-the-vs-code-prettier-extension-directly) README. Despite what the instructions said I needed to set Prettier as VSCode's Default Formatter for `.astro` files.
+It turns out I needed a setting from the [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#formatting-with-the-vs-code-prettier-extension-directly) README to use Prettier as VSCode's Default Formatter for `.astro` files.
 
 User Settings:
 
 ```json
+{
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+}
 ```
