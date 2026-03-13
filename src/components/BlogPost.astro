@@ -1,7 +1,14 @@
 ---
+interface Props {
+  date: Date | string;
+  url: string;
+  title: string;
+}
+
 const { date, url, title } = Astro.props;
+
 const d = new Date(date);
-const formattedDate = `${d.getFullYear()} ${d.toLocaleDateString('en-US', { month: 'short' })} ${d.getDate()}`;
+const formattedDate = `${d.getFullYear()} ${d.toLocaleDateString("en-US", { month: "short" })} ${d.getDate()}`;
 ---
 
 <li>
