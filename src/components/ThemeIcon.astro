@@ -43,9 +43,14 @@
 </style>
 
 <script is:inline>
-  document.getElementById('themeToggle')?.addEventListener('click', function () {
-    var el = document.documentElement;
-    el.classList.toggle('dark');
-    localStorage.setItem('theme', el.classList.contains('dark') ? 'dark' : 'light');
-  });
+  document
+    .getElementById("themeToggle")
+    ?.addEventListener("click", function () {
+      var el = document.documentElement;
+      el.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        el.classList.contains("dark") ? "dark" : "light",
+      );
+    });
 </script>
