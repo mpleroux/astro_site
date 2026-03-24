@@ -5,21 +5,22 @@
 
 @theme {
   /* set default (light mode) values */
-  --color-page-bg: var(--color-gray-200);
+  --color-header-bg: var(--color-gray-300);
+  --color-page-bg: var(--color-gray-100);
   --color-page-text: var(--color-gray-800);
   --color-link: var(--color-gray-600);
 }
 
 /* manual toggle: if .dark class is on <html> */
 .dark {
+  --color-header-bg: var(--color-gray-900);
   --color-page-bg: var(--color-gray-800);
   --color-page-text: var(--color-gray-200);
-  --color-link: var(--color-blue-500);
+  --color-link: var(--color-blue-400);
 }
 
-/* base styles after normalize */
+/* add basic styles after Preflight */
 @layer base {
-  /* Restore Heading Sizes */
   h1 {
     @apply mb-6 text-4xl font-bold tracking-tight;
   }
@@ -30,14 +31,12 @@
     @apply mb-3 text-2xl font-semibold;
   }
 
-  /* Restore Spacing for Flow Elements */
   p,
   ul,
   ol {
     @apply mb-4;
   }
 
-  /* Restore List Formatting */
   ul {
     @apply list-inside list-disc;
   }
@@ -45,14 +44,20 @@
     @apply list-inside list-decimal;
   }
 
-  /* Restore Link Styles */
   a {
     @apply text-link underline transition-opacity hover:opacity-80;
   }
 
-  /* Modern Body Defaults */
   body {
     @apply bg-page-bg text-page-text transition-colors duration-300;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      @apply animate-none! scroll-auto! transition-none!;
+    }
   }
 }
 
