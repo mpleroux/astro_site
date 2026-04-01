@@ -59,47 +59,6 @@
   }
 }
 
-/* TODO replace with Tailwind classes in markup */
-
-/* Hamburger menu */
-.menu {
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  width: 100%;
-  display: none;
-  margin: 0;
-}
-
-.nav-links a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 :has(.menu[aria-expanded="true"]) .nav-links {
   display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-  }
-
-  .menu {
-    display: none;
-  }
 }
