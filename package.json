@@ -11,8 +11,8 @@
     "check": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.17",
-    "astro": "^6.0.8"
+    "@astrojs/rss": "^4.0.18",
+    "astro": "^6.1.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",
