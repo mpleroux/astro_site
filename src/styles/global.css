@@ -46,6 +46,10 @@
     @apply text-link underline transition-opacity hover:opacity-80;
   }
 
+  button {
+    @apply hover:cursor-pointer;
+  }
+
   body {
     @apply bg-page-bg text-page-text transition-colors duration-300;
   }
@@ -57,8 +61,4 @@
       @apply animate-none! scroll-auto! transition-none!;
     }
   }
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
 }

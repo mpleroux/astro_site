@@ -5,7 +5,9 @@ import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <header>
-  <nav class="flex justify-between">
+  <nav
+    class="flex justify-between has-[.menu[aria-expanded='true']]:[&_.nav-links]:block"
+  >
     <ThemeIcon />
     <Menu />
     <Navigation />
