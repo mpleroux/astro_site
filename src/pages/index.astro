@@ -1,21 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import myImage from "../assets/selfie.jpg";
 
 const pageTitle = "Hello, I'm Mike.";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="mb-8">
-    <p>
-      I'm a lifelong New Englander who enjoys photography, improving my web
-      development skills, exploring this wonderful part of the country, and too
-      many other things to mention.
-    </p>
+  <section class="mb-8 flex gap-4">
+    <div>
+      <p>
+        I'm a lifelong New Englander who enjoys photography, improving my web
+        development skills, exploring this wonderful part of the country, and
+        too many other things to mention.
+      </p>
 
-    <p>
-      My plans for this new website are to host a blog, some of my favorite
-      photos, and personal software projects.
-    </p>
+      <p>
+        My plans for this new website are to host a blog, some of my favorite
+        photos, and personal software projects.
+      </p>
+    </div>
+
+    <Image
+      class="relative -mt-12 self-start rounded-full object-cover"
+      width="150"
+      height="150"
+      src={myImage}
+      alt="Michael LeRoux"
+    />
   </section>
 
   <p class="text-meta">
