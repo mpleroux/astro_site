@@ -4,12 +4,13 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
-<header>
-  <nav
-    class="flex justify-between has-[.menu[aria-expanded='true']]:[&_.nav-links]:block"
+<header class="relative">
+  <div
+    class="flex items-center justify-between px-4 py-3 sm:justify-center sm:gap-4 sm:px-0"
   >
     <ThemeIcon />
-    <Menu />
+    <div class="hidden h-6 w-px bg-gray-400 sm:block dark:bg-gray-500"></div>
     <Navigation />
-  </nav>
+    <Menu />
+  </div>
 </header>
