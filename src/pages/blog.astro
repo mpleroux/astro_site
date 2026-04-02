@@ -1,27 +1,43 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../components/BlogPost.astro';
-import { getCollection } from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
 
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection("blog");
 // Sort posts by publication date, newest first
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const recentPosts = sortedPosts.slice(0, 3);
 
-const pageTitle = 'Blog';
+const postsData = await Promise.all(
+  recentPosts.map(async (post) => {
+    const { Content } = await render(post);
+    return { post, Content };
+  }),
+);
+
+function formatDate(date: Date): string {
+  const d = new Date(date);
+  return `${d.getFullYear()} ${d.toLocaleDateString("en-US", { month: "short" })} ${d.getDate()}`;
+}
+
+const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
-    {
-      sortedPosts.map((post: any) => (
-        <BlogPost
-          date={post.data.pubDate}
-          url={`/posts/${post.id}/`}
-          title={post.data.title}
-        />
-      ))
-    }
-  </ul>
+  {
+    postsData.map(({ post, Content }) => (
+      <article class="mb-12">
+        <p class="mb-1 text-xs tracking-wide text-text-faded uppercase sm:text-sm">
+          {formatDate(post.data.pubDate)}
+        </p>
+        <h2>{post.data.title}</h2>
+        <Content />
+        <p>
+          <a href={`/posts/${post.id}/`}>Read more →</a>
+        </p>
+      </article>
+    ))
+  }
+  <p class="text-right"><a href="/archive">View all posts →</a></p>
 </BaseLayout>

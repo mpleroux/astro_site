@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+// Sort posts by publication date, newest first
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const pageTitle = "Blog Archive";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {
+      sortedPosts.map((post: any) => (
+        <BlogPost
+          date={post.data.pubDate}
+          url={`/posts/${post.id}/`}
+          title={post.data.title}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>
