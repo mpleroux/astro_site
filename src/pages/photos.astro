@@ -1,34 +1,50 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import myPhoto from "../assets/IMG_3151_chairs.jpeg";
 
 const pageTitle = "Photos";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>
-    I plan to create a custom photo gallery to display my favorite shots from
-    the past decade and simulate the collections I once maintained on Flickr and
-    Instagram.
-  </p>
+  <section class="mb-8 flex flex-col gap-4 sm:flex-row">
+    <div>
+      <p>
+        I plan to create a custom photo gallery to display my favorite shots
+        from the past decade and simulate the collections I once maintained on
+        Flickr and Instagram.
+      </p>
 
-  <h3>Features</h3>
+      <h3>Features</h3>
 
-  <ul>
-    <li>Cloudinary for image hosting and serving different sizes?</li>
-    <li>Reverse chronological feed</li>
-    <li>Lightbox</li>
-    <li>Lazy loaded images</li>
-    <li>Full image downloads</li>
-    <li>Tag view</li>
-    <li>
-      Photo details
       <ul>
-        <li>Caption</li>
-        <li>Description</li>
-        <li>Tags</li>
-        <li>Map of location</li>
-        <li>Camera metadata</li>
+        <li>Cloudinary for image hosting and serving different sizes?</li>
+        <li>Reverse chronological feed</li>
+        <li>Lightbox</li>
+        <li>Lazy loaded images</li>
+        <li>Full image downloads</li>
+        <li>Tag view</li>
+        <li>
+          Photo details
+          <ul>
+            <li>Caption</li>
+            <li>Description</li>
+            <li>Tags</li>
+            <li>Map of location</li>
+            <li>Camera metadata</li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
+    </div>
+
+    <a class="block h-full w-full" href={myPhoto.src} target="_blank">
+      <Image
+        class="block transition-opacity hover:opacity-90"
+        src={myPhoto}
+        height="240"
+        width="327"
+        alt="Bear Cove Park"
+      />
+    </a>
+  </section>
 </BaseLayout>
