@@ -16,7 +16,7 @@ Here are the two VSCode plugins in question:
 - [withastro/prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro)
 - [tailwindlabs/prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 
-## Installation and configuration
+### Installation and configuration
 
 The commands to install both of them as dev dependencies were straightforward:
 
@@ -29,7 +29,7 @@ I opted for [Tailwind's suggestion](https://github.com/tailwindlabs/prettier-plu
 
 "Your configuration must list `prettier-plugin-tailwindcss` last in the plugins array for it to process the output of other plugins correctly. You should also explicitly define the parser for Astro files."
 
-**.prettierrc**:
+_.prettierrc:_
 
 ```json
 {
@@ -49,7 +49,7 @@ I opted for [Tailwind's suggestion](https://github.com/tailwindlabs/prettier-plu
 }
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 I could see Tailwind classes being reordered in HTML and CSS files, but nothing was being changed in `.astro` files.
 
@@ -76,7 +76,7 @@ npx prettier --write src/layouts/BaseLayout.astro # this worked!
 
 It turns out I overlooked a setting from the [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#formatting-with-the-vs-code-prettier-extension-directly) README to use Prettier as VSCode's Default Formatter for `.astro` files.
 
-User Settings:
+_User Settings:_
 
 ```json
 {
