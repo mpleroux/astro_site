@@ -3,7 +3,20 @@
 /* define the custom dark variant for utility classes like dark:text-white */
 @custom-variant dark (&:where(.dark, .dark *));
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
 @theme {
+  --animate-fade-in: fade-in 0.4s ease-out both;
+
   /* set default (light mode) values */
   --color-page-bg: var(--color-gray-100);
   --color-page-text: var(--color-gray-800);
