@@ -7,7 +7,7 @@ const pageTitle = "Hello, I'm Mike.";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="mb-8 flex gap-4">
+  <section class="mb-8 flex flex-col gap-4 sm:flex-row">
     <div>
       <p>
         I'm a lifelong New Englander who enjoys photography, improving my web
@@ -22,7 +22,7 @@ const pageTitle = "Hello, I'm Mike.";
     </div>
 
     <Image
-      class="relative -mt-12 self-start rounded-full object-cover"
+      class="self-start rounded-full object-cover"
       width="150"
       height="150"
       src={myImage}
