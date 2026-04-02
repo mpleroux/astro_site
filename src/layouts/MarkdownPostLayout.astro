@@ -1,5 +1,5 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -13,9 +13,9 @@ const { frontmatter } = Astro.props;
     )
   }
 
-  <p>
+  <p class="text-xs text-text-faded sm:text-sm">
     Published on: {
-      frontmatter.pubDate.toLocaleDateString('en-US', { timeZone: 'UTC' })
+      frontmatter.pubDate.toLocaleDateString("en-US", { timeZone: "UTC" })
     }
   </p>
 
@@ -29,15 +29,16 @@ const { frontmatter } = Astro.props;
     )
   }
 
+  <slot />
+
   <div class="flex flex-wrap">
+    Tags:
     {
       frontmatter.tags.map((tag: string) => (
-        <p class="m-1 p-1">
+        <p class="px-1">
           <a href={`/tags/${tag}`}>{tag}</a>
         </p>
       ))
     }
   </div>
-
-  <slot />
 </BaseLayout>

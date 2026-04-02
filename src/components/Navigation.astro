@@ -3,9 +3,10 @@ const currentPath = Astro.url.pathname;
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
-  { href: "/tags", label: "Tags" },
+  { href: "/photos", label: "Photos" },
+  { href: "/work", label: "Work" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function isActive(href: string): boolean {
@@ -24,9 +25,9 @@ function isActive(href: string): boolean {
         href={href}
         class:list={[
           "block px-4 py-3 text-page-text no-underline transition-colors",
-          "hover:bg-gray-300 dark:hover:bg-gray-600",
+          "hover:bg-gray-200 dark:hover:bg-gray-600",
           "sm:rounded sm:px-3 sm:py-1",
-          isActive(href) ? "bg-gray-400 dark:bg-gray-500" : "",
+          isActive(href) ? "bg-gray-300 dark:bg-gray-500" : "",
         ]}
       >
         {label}

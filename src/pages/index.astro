@@ -1,7 +1,18 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = 'Home Page';
+const pageTitle = "Michael LeRoux";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <p class="mb-8">
+    Welcome to my humble website. Like everything else online it's a work in
+    progress.
+  </p>
+
+  <p class="text-xs text-text-faded sm:text-sm">
+    Built with <a href="https://astro.build/">Astro</a> and <a
+      href="https://tailwindcss.com/">Tailwind CSS</a
+    >.
+  </p>
+</BaseLayout>
