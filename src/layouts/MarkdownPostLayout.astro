@@ -2,6 +2,11 @@
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
+
+function formatDate(date: Date): string {
+  const d = new Date(date);
+  return `${d.getFullYear()} ${d.toLocaleDateString("en-US", { month: "short" })} ${d.getDate()}`;
+}
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
@@ -13,10 +18,8 @@ const { frontmatter } = Astro.props;
     )
   }
 
-  <p class="text-xs text-text-faded sm:text-sm">
-    Published on: {
-      frontmatter.pubDate.toLocaleDateString("en-US", { timeZone: "UTC" })
-    }
+  <p class="text-meta mb-1 tracking-wide uppercase">
+    {formatDate(frontmatter.pubDate)}
   </p>
 
   {
@@ -35,9 +38,9 @@ const { frontmatter } = Astro.props;
     Tags:
     {
       frontmatter.tags.map((tag: string) => (
-        <p class="px-1">
+        <span class="px-1">
           <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
+        </span>
       ))
     }
   </div>

@@ -27,17 +27,18 @@ const pageTitle = "Blog";
 <BaseLayout pageTitle={pageTitle}>
   {
     postsData.map(({ post, Content }) => (
-      <article class="mb-12">
-        <p class="mb-1 text-xs tracking-wide text-text-faded uppercase sm:text-sm">
+      <article class="mb-14">
+        <p class="text-meta mb-1 tracking-wide uppercase">
           {formatDate(post.data.pubDate)}
         </p>
-        <h2>{post.data.title}</h2>
+        <h2>
+          <a class="no-underline" href={`/posts/${post.id}/`}>
+            {post.data.title}
+          </a>
+        </h2>
         <Content />
-        <p>
-          <a href={`/posts/${post.id}/`}>Read more →</a>
-        </p>
       </article>
     ))
   }
-  <p class="text-right"><a href="/archive">View all posts →</a></p>
+  <p class="text-right"><a href="/archive">Blog Archive →</a></p>
 </BaseLayout>
