@@ -5,17 +5,32 @@ const pageTitle = "Photos";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>On Deck</h2>
+  <h2>Future Plans</h2>
 
   <p>
     I plan to create a custom photo gallery to display my favorite shots from
-    the past decade to simulate the photo galleries I once maintained on Flickr
-    and Instagram.
+    the past decade and simulate the collections I once maintained on Flickr and
+    Instagram.
   </p>
 
-  <p>
-    Possibly using Cloudinary for image hosting. Other features: lightboxes,
-    lazy-loaded images, full image downloads, collections based on themes. Also
-    captions, descriptions, and metadata for each photo.
-  </p>
+  <p>Some likely features:</p>
+
+  <ul>
+    <li>Cloudinary for image hosting and serving different sizes?</li>
+    <li>Reverse chronological feed</li>
+    <li>Lightbox</li>
+    <li>Lazy loaded images</li>
+    <li>Full image downloads</li>
+    <li>Tag view</li>
+    <li>
+      Photo details
+      <ul>
+        <li>Caption</li>
+        <li>Description</li>
+        <li>Tags</li>
+        <li>Map of location</li>
+        <li>Camera metadata</li>
+      </ul>
+    </li>
+  </ul>
 </BaseLayout>
