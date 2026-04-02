@@ -68,13 +68,13 @@ I verified there were no errors in VSCode's Output panel for Prettier:
 }
 ```
 
-I checked if Prettier was able to change `.astro` files using the CLI via the terminal. It worked.
+I checked if Prettier was able to change `.astro` files using the CLI via the terminal. That worked, so the problem was in the code editor.
 
 ```sh
 npx prettier --write src/layouts/BaseLayout.astro # this worked!
 ```
 
-It turns out I needed a setting from the [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#formatting-with-the-vs-code-prettier-extension-directly) README to use Prettier as VSCode's Default Formatter for `.astro` files.
+It turns out I overlooked a setting from the [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro?tab=readme-ov-file#formatting-with-the-vs-code-prettier-extension-directly) README to use Prettier as VSCode's Default Formatter for `.astro` files.
 
 User Settings:
 
@@ -85,3 +85,5 @@ User Settings:
   },
 }
 ```
+
+And now I'll never need to think about ordering Tailwind utility classes again!
