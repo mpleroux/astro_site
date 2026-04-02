@@ -55,16 +55,20 @@
   h4 {
     @apply mb-3 text-base font-semibold sm:text-lg;
   }
-  p,
-  ul,
-  ol {
+  p {
     @apply mb-4;
   }
   ul {
-    @apply list-inside list-disc;
+    @apply mb-4 list-disc pl-4;
   }
   ol {
-    @apply list-inside list-decimal;
+    @apply mb-4 list-decimal pl-4;
+  }
+  /* This ensures that nested lists don't get double bottom margin 
+     and identifies the nested bullet style */
+  li > ul,
+  li > ol {
+    @apply mb-0 list-[circle];
   }
   a {
     @apply text-link underline transition-opacity hover:opacity-80;
@@ -102,10 +106,10 @@
   .dark pre span {
     color: var(--shiki-dark) !important;
   }
+}
 
-  @layer components {
-    .text-meta {
-      @apply text-xs text-text-faded sm:text-sm;
-    }
+@layer components {
+  .text-meta {
+    @apply text-xs text-text-faded sm:text-sm;
   }
 }
