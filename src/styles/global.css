@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* define the custom dark variant for utility classes like dark:text-white */
+/* define the custom dark variant for utility classes */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes fade-in {
@@ -25,6 +25,11 @@
   --color-nav: var(--color-gray-200);
   --color-nav-hover: var(--color-gray-300);
   --color-nav-active: var(--color-gray-300);
+  --color-form-input: var(--color-gray-300);
+
+  /* no dark equivalents for now */
+  --color-button: var(--color-blue-600);
+  --color-button-hover: var(--color-blue-700);
 }
 
 /* manual toggle: if .dark class is on <html> */
@@ -36,6 +41,7 @@
   --color-nav: var(--color-gray-700);
   --color-nav-hover: var(--color-gray-600);
   --color-nav-active: var(--color-gray-500);
+  --color-form-input: var(--color-gray-600);
 }
 
 /* add basic styles after Preflight */
@@ -64,8 +70,6 @@
   ol {
     @apply mb-4 list-decimal pl-4;
   }
-  /* This ensures that nested lists don't get double bottom margin 
-     and identifies the nested bullet style */
   li > ul,
   li > ol {
     @apply mb-0 list-[circle];
@@ -88,8 +92,8 @@
     }
   }
 
-  /* Shiki */
-  /* Default (Light) */
+  /* Shiki code blocks */
+  /* default (light) */
   pre {
     background-color: var(--shiki-light-bg) !important;
     color: var(--shiki-light) !important;
@@ -97,8 +101,7 @@
   pre span {
     color: var(--shiki-light) !important;
   }
-
-  /* Dark Mode Toggle */
+  /* dark mode */
   .dark pre {
     background-color: var(--shiki-dark-bg) !important;
     color: var(--shiki-dark) !important;
@@ -111,5 +114,14 @@
 @layer components {
   .text-meta {
     @apply text-xs text-text-faded sm:text-sm;
+  }
+  .form-input {
+    @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
+
+    /* not working...
+       input fields filled by 1Password still get a light background color
+       when my system and page are both configured to use dark mode
+    */
+    @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
   }
 }
