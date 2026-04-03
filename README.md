@@ -6,8 +6,8 @@ URL: [mleroux.me](https://mleroux.me)
 
 ## Services Used
 
-| Service  | Description |
-| -------- | ------------|
+| Service | Description |
+| -------- | ----------- |
 | [Astro](https://astro.build/) | Lightweight web framework |
 | [Tailwind CSS](https://tailwindcss.com/) | CSS utility classes |
 | [Netlify](https://www.netlify.com/) | Deploys the application |
