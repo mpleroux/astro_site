@@ -7,7 +7,7 @@ const pageTitle = "Photos";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="mb-8 flex flex-col gap-4 sm:flex-row">
+  <section class="mb-8 flex flex-col gap-6 sm:flex-row">
     <div>
       <p>
         I plan to create a custom photo gallery to display my favorite shots
@@ -37,12 +37,13 @@ const pageTitle = "Photos";
       </ul>
     </div>
 
-    <a class="block h-full w-full" href={myPhoto.src} target="_blank">
+    <a class="block flex-none" href={myPhoto.src} target="_blank">
       <Image
         class="block transition-opacity hover:opacity-90"
         src={myPhoto}
-        height="240"
-        width="327"
+        width={320}
+        widths={[320, 640, 960]}
+        sizes="(max-width: 768px) 320px, 640px"
         alt="Bear Cove Park"
       />
     </a>
