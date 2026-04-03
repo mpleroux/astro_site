@@ -22,6 +22,7 @@ function isActive(href: string): boolean {
     links.map(({ href, label }) => (
       <a
         href={href}
+        aria-current={isActive(href) ? "page" : undefined}
         class:list={[
           "block px-4 py-3 text-page-text no-underline transition-colors",
           "hover:bg-nav-hover",
