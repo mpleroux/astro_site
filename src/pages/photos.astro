@@ -10,9 +10,8 @@ const pageTitle = "Photos";
   <section class="mb-8 flex flex-col gap-6 sm:flex-row">
     <div>
       <p>
-        I plan to create a custom photo gallery to display my favorite shots
-        from the past decade and simulate the collections I once maintained on
-        Flickr and Instagram.
+        I plan to create a photo gallery to display my favorite shots from the
+        past decade, similar to those I once curated on Flickr and Instagram.
       </p>
 
       <h3>Features</h3>
@@ -23,13 +22,13 @@ const pageTitle = "Photos";
         <li>Lightbox</li>
         <li>Lazy loaded images</li>
         <li>Full image downloads</li>
-        <li>Tag view</li>
+        <li>Albums</li>
         <li>
           Photo details
           <ul>
             <li>Caption</li>
             <li>Description</li>
-            <li>Tags</li>
+            <li>Tags?</li>
             <li>Map of location</li>
             <li>Camera metadata</li>
           </ul>
@@ -37,7 +36,12 @@ const pageTitle = "Photos";
       </ul>
     </div>
 
-    <a class="block flex-none" href={myPhoto.src} target="_blank" rel="noopener noreferrer" aria-label="Bear Cove Park photo (opens in new tab)">
+    <a
+      class="block flex-none"
+      href={myPhoto.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Bear Cove Park photo (opens in new tab)">
       <Image
         class="block transition-opacity hover:opacity-90"
         src={myPhoto}

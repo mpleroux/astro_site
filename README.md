@@ -11,4 +11,3 @@ URL: [mleroux.me](https://mleroux.me)
 | [Astro](https://astro.build/) | Lightweight web framework |
 | [Tailwind CSS](https://tailwindcss.com/) | CSS utility classes |
 | [Netlify](https://www.netlify.com/) | Deploys the application |
-| [Basin](https://usebasin.com/) | Backend for the contact form |
