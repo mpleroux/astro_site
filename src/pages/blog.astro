@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TagList from "../components/TagList.astro";
 import { getCollection, render } from "astro:content";
+import { formatDate } from "../utils/format";
 
 const allPosts = await getCollection("blog");
 // Sort posts by publication date, newest first
@@ -16,15 +18,18 @@ const postsData = await Promise.all(
   }),
 );
 
-function formatDate(date: Date): string {
-  const d = new Date(date);
-  return `${d.getFullYear()} ${d.toLocaleDateString("en-US", { month: "long" })} ${d.getDate()}`;
-}
-
 const pageTitle = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <div class="flex items-center justify-between">
+    <h1>{pageTitle}</h1>
+
+    <p class="text-right">
+      <a href="/archive">Blog Archive <span aria-hidden="true">&rarr;</span></a>
+    </p>
+  </div>
+
   {
     postsData.map(({ post, Content }) => (
       <article class="mb-14">
@@ -37,9 +42,12 @@ const pageTitle = "Blog";
           </a>
         </h2>
         <Content />
+
+        <TagList tags={post.data.tags} />
       </article>
     ))
   }
+
   <p class="text-right">
     <a href="/archive">Blog Archive <span aria-hidden="true">&rarr;</span></a>
   </p>

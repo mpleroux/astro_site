@@ -1,12 +1,9 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import TagList from "../components/TagList.astro";
+import { formatDate } from "../utils/format";
 
 const { frontmatter } = Astro.props;
-
-function formatDate(date: Date): string {
-  const d = new Date(date);
-  return `${d.getFullYear()} ${d.toLocaleDateString("en-US", { month: "long" })} ${d.getDate()}`;
-}
 ---
 
 <BaseLayout>
@@ -44,14 +41,5 @@ function formatDate(date: Date): string {
 
   <slot />
 
-  <div class="flex flex-wrap text-xs">
-    Tags:
-    {
-      frontmatter.tags.map((tag: string) => (
-        <span class="pl-1">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </span>
-      ))
-    }
-  </div>
+  <TagList tags={frontmatter.tags} />
 </BaseLayout>
