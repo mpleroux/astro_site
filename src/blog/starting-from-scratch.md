@@ -17,4 +17,4 @@ Behind-the-scenes, the blogging experience is merely a folder of Markdown files 
 
 Progress on the website will be slow as I become more familiar with Astro and web services like Cloudinary for hosting photos.
 
-So with that in mind, here goes nothing!
+So with that in mind here goes nothing!

@@ -13,6 +13,12 @@ const pageTitle = "Blog Archive";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <p>
+    <a class="text-faded" href="/blog"
+      ><span aria-hidden="true">&larr;</span> Blog</a
+    >
+  </p>
+
   <ul>
     {
       sortedPosts.map((post: any) => (
