@@ -124,4 +124,7 @@
     */
     @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
   }
+  .icon-scale {
+    @apply transition duration-300 ease-in-out hover:scale-125;
+  }
 }
