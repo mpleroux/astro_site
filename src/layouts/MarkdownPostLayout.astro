@@ -7,14 +7,6 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
-  <!-- {
-    frontmatter.description && (
-      <p>
-        <em>{frontmatter.description}</em>
-      </p>
-    )
-  } -->
-
   <p>
     <a class="text-faded" href="/blog"
       ><span aria-hidden="true">&larr;</span> Blog</a
@@ -28,16 +20,6 @@ const { frontmatter } = Astro.props;
   </p>
 
   <h2>{frontmatter.title}</h2>
-
-  <!-- {
-    frontmatter.image && (
-      <img
-        src={frontmatter.image.url}
-        width="300"
-        alt={frontmatter.image.alt}
-      />
-    )
-  } -->
 
   <slot />
 

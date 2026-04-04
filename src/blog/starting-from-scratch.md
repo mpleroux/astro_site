@@ -1,11 +1,7 @@
 ---
 title: 'Starting from scratch'
 pubDate: 2026-03-03
-description: ''
 author: 'Michael LeRoux'
-image:
-    url: ''
-    alt: ''
 tags: ['personal', 'blog', 'astro']
 ---
 

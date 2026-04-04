@@ -1,11 +1,7 @@
 ---
 title: 'Reordering Tailwind classes in Astro using Prettier'
 pubDate: 2026-03-06
-description: ''
 author: 'Michael LeRoux'
-image:
-    url: ''
-    alt: ''
 tags: ['astro', 'tailwind', 'prettier', 'vscode']
 ---
 
