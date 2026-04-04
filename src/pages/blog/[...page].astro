@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagList from "../../components/TagList.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { formatDate } from "../../utils/format";
+import type { GetStaticPathsOptions, Page } from "astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const allPosts = await getCollection("blog");
+  const sortedPosts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+  return paginate(sortedPosts, { pageSize: 3 });
+}
+
+const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
+
+const postsData = await Promise.all(
+  page.data.map(async (post: any) => {
+    const { Content } = await render(post);
+    return { post, Content };
+  }),
+);
+
+const pageTitle = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="flex items-center justify-between">
+    <h1>{pageTitle}</h1>
+
+    <p class="text-right">
+      <a href="/archive">Blog Archive <span aria-hidden="true">&rarr;</span></a>
+    </p>
+  </div>
+
+  {
+    postsData.map(({ post, Content }) => (
+      <article class="mb-14">
+        <p class="text-meta mb-1 font-semibold uppercase">
+          {formatDate(post.data.pubDate)}
+        </p>
+        <h2>
+          <a class="text-inherit no-underline" href={`/posts/${post.id}/`}>
+            {post.data.title}
+          </a>
+        </h2>
+        <Content />
+
+        <TagList tags={post.data.tags} />
+      </article>
+    ))
+  }
+
+  {
+    page.lastPage > 1 && (
+      <nav class="mt-4 flex items-center">
+        <div class="flex-1">
+          {page.url.prev && (
+            <a href={page.url.prev}>
+              <span aria-hidden="true">&larr;</span> Newer
+            </a>
+          )}
+        </div>
+        <span class="text-meta">
+          Page {page.currentPage} of {page.lastPage}
+        </span>
+        <div class="flex-1 text-right">
+          {page.url.next && (
+            <a href={page.url.next}>
+              Older <span aria-hidden="true">&rarr;</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    )
+  }
+</BaseLayout>
