@@ -1,0 +1,22 @@
+---
+title: "Some recent photos"
+pubDate: 2026-04-03
+author: "Michael LeRoux"
+tags: ["photo"]
+---
+
+import { Image } from "astro:assets";
+import myPhoto_3151 from "../assets/IMG_3151.jpeg";
+import myPhoto_3110 from "../assets/IMG_3110.jpeg";
+
+<a className="inline-block" href={myPhoto_3151.src} target="_blank">
+  <Image src={myPhoto_3151} width={492} alt="Bare Cove Park chairs" />
+</a>
+
+Two Adirondack chairs at a lookout point in Hingham's Bare Cove Park. The chairs have signs with hearts on them. They reminded me of the [weighted companion cubes](https://en.wikipedia.org/wiki/Weighted_Companion_Cube) from the classic video game [Portal](<https://en.wikipedia.org/wiki/Portal_(video_game)>).
+
+<a className="inline-block" href={myPhoto_3110.src} target="_blank">
+  <Image src={myPhoto_3110} width={308} alt="White-tailed deer in winter" />
+</a>
+
+Hello fren. A white-tailed deer nonchalantly snacking a few steps from the bike path.
