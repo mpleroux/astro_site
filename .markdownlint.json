@@ -3,5 +3,8 @@
   "MD002": {
     "level": 3
   },
+  "MD007": {
+    "indent": 4
+  },
   "MD013": false
 }
