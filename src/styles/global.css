@@ -16,6 +16,7 @@
 
 @theme {
     --animate-fade-in: fade-in 0.4s ease-out both;
+    --breakpoint-xs: 480px;
 
     /* set default (light mode) values */
     --color-page-bg: var(--color-gray-100);
@@ -118,10 +119,8 @@
     .form-input {
         @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
 
-        /* not working...
-       input fields filled by 1Password still get a light background color
-       when my system and page are both configured to use dark mode
-    */
+        /* not working: input fields filled by 1Password still get a light background color
+        when my system and page are both configured to use dark mode */
         @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
     }
     .icon-scale {
