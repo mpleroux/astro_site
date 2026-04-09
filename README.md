@@ -26,6 +26,11 @@ URL: [mleroux.me](https://mleroux.me)
 | [Tailwind CSS](https://tailwindcss.com/) | Styling |
 | [Netlify](https://www.netlify.com/) | Hosts the application |
 
+## Improvements
+
+- [ ] Projects page
+- [ ] Photo gallery
+
 ## Run locally
 
 Clone the repo, run two `npm` commands in the project directory, and visit [localhost:4321](http://localhost:4321).
@@ -34,3 +39,7 @@ Clone the repo, run two `npm` commands in the project directory, and visit [loca
 npm install
 npm run dev
 ```
+
+## Screenshot
+
+<img src="./public/screenshot.png" width="400" alt="Screenshot of Astro Site">
