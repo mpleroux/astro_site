@@ -14,6 +14,7 @@ URL: [mleroux.me](https://mleroux.me)
     - Tags
     - Code snippet styling
     - An RSS feed, and an archive list of posts
+- Projects page featuring GitHub repos and live versions deployed on Netlify
 - Work page with resumé
 - SVG icons for social and contact links
 - Application automatically deployed to Netlify after each repo update
