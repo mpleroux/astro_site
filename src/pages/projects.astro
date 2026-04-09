@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const pageTitle = "Projects";
+
+const projects = [
+  {
+    title: "Astro site",
+    description:
+      "This website! Astro handles the structure and Tailwind handles the styling.",
+    repoUrl: "https://github.com/mpleroux/astro_site",
+    tags: ["Astro", "Tailwind CSS"],
+  },
+  {
+    title: "Pinboard clone",
+    description:
+      "An experiment to vibe-code a barebones, single user clone of the social bookmarking website Pinboard using Claude Code.",
+    repoUrl: "https://github.com/mpleroux/pinboard_clone",
+    tags: ["Tailwind CSS", "Claude Code"],
+  },
+];
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+
+  <section class="grid grid-cols-1 gap-4 xs:grid-cols-2">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
+</BaseLayout>

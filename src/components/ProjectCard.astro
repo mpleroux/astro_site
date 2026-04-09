@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  repoUrl: string;
+  liveUrl?: string;
+  tags: string[];
+}
+
+const { title, description, repoUrl, liveUrl, tags } = Astro.props;
+---
+
+<article class="flex flex-col rounded-2xl border p-4">
+  <h2>{title}</h2>
+
+  <p>
+    {description}
+  </p>
+
+  <p class="flex">
+    <a class="pr-4" href={repoUrl}>Code &rarr;</a>
+    {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
+  </p>
+
+  <ul class="m-0 mt-auto flex list-none p-0 text-sm text-text-faded">
+    {tags.map((tag) => <li class="pr-3">{tag}</li>)}
+  </ul>
+</article>
