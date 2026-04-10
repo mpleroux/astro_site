@@ -4,126 +4,129 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-        translate: 0 6px;
-    }
-    to {
-        opacity: 1;
-        translate: 0 0;
-    }
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 @theme {
-    --animate-fade-in: fade-in 0.4s ease-out both;
-    --breakpoint-xs: 480px;
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --breakpoint-xs: 480px;
 
-    /* set default (light mode) values */
-    --color-page-bg: var(--color-gray-100);
-    --color-page-text: var(--color-gray-800);
-    --color-link: var(--color-gray-600);
-    --color-text-faded: var(--color-gray-600);
-    --color-nav: var(--color-gray-200);
-    --color-nav-hover: var(--color-gray-300);
-    --color-nav-active: var(--color-gray-300);
-    --color-form-input: var(--color-gray-300);
+  /* set default (light mode) values */
+  --color-page-bg: var(--color-gray-100);
+  --color-page-text: var(--color-gray-800);
+  --color-link: var(--color-gray-600);
+  --color-text-faded: var(--color-gray-600);
+  --color-nav: var(--color-gray-200);
+  --color-nav-hover: var(--color-gray-300);
+  --color-nav-active: var(--color-gray-300);
+  --color-form-input: var(--color-gray-300);
 
-    /* no dark equivalents for now */
-    --color-button: var(--color-blue-600);
-    --color-button-hover: var(--color-blue-700);
+  /* no dark equivalents for now */
+  --color-button: var(--color-blue-600);
+  --color-button-hover: var(--color-blue-700);
 }
 
 /* manual toggle: if .dark class is on <html> */
 .dark {
-    --color-page-bg: var(--color-gray-800);
-    --color-page-text: var(--color-gray-200);
-    --color-link: var(--color-blue-400);
-    --color-text-faded: var(--color-gray-400);
-    --color-nav: var(--color-gray-700);
-    --color-nav-hover: var(--color-gray-600);
-    --color-nav-active: var(--color-gray-500);
-    --color-form-input: var(--color-gray-600);
+  --color-page-bg: var(--color-gray-800);
+  --color-page-text: var(--color-gray-200);
+  --color-link: var(--color-blue-400);
+  --color-text-faded: var(--color-gray-400);
+  --color-nav: var(--color-gray-700);
+  --color-nav-hover: var(--color-gray-600);
+  --color-nav-active: var(--color-gray-500);
+  --color-form-input: var(--color-gray-600);
 }
 
 /* add basic styles after Preflight */
 @layer base {
-    body {
-        @apply bg-page-bg text-page-text transition-colors duration-300;
-    }
-    h1 {
-        @apply mb-5 text-2xl font-bold tracking-tight sm:text-3xl;
-    }
-    h2 {
-        @apply mb-4 text-xl font-semibold sm:text-2xl;
-    }
-    h3 {
-        @apply mb-3 text-lg font-semibold sm:text-xl;
-    }
-    h4 {
-        @apply mb-3 text-base font-semibold sm:text-lg;
-    }
-    p {
-        @apply mb-4;
-    }
-    ul {
-        @apply mb-4 list-disc pl-4;
-    }
-    ol {
-        @apply mb-4 list-decimal pl-4;
-    }
-    li > ul,
-    li > ol {
-        @apply mb-0 list-[circle];
-    }
-    a {
-        @apply text-link underline transition-opacity hover:opacity-80;
-    }
-    pre {
-        @apply mb-4 px-4 py-2 text-xs sm:text-sm;
-    }
-    button {
-        @apply hover:cursor-pointer;
-    }
+  body {
+    @apply bg-page-bg text-page-text transition-colors duration-300;
+  }
+  h1 {
+    @apply mb-5 text-2xl font-bold tracking-tight sm:text-3xl;
+  }
+  h2 {
+    @apply mb-4 text-xl font-semibold sm:text-2xl;
+  }
+  h3 {
+    @apply mb-3 text-lg font-semibold sm:text-xl;
+  }
+  h4 {
+    @apply mb-3 text-base font-semibold sm:text-lg;
+  }
+  p {
+    @apply mb-4;
+  }
+  ul {
+    @apply mb-4 list-disc pl-4;
+  }
+  ol {
+    @apply mb-4 list-decimal pl-4;
+  }
+  li > ul,
+  li > ol {
+    @apply mb-0 list-[circle];
+  }
+  a {
+    @apply text-link underline transition-opacity hover:opacity-80;
+  }
+  pre {
+    @apply mb-4 px-4 py-2 text-xs sm:text-sm;
+  }
+  button {
+    @apply hover:cursor-pointer;
+  }
 
-    @media (prefers-reduced-motion: reduce) {
-        *,
-        ::before,
-        ::after {
-            @apply animate-none! scroll-auto! transition-none!;
-        }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      @apply animate-none! scroll-auto! transition-none!;
     }
+  }
 
-    /* Shiki code blocks */
-    /* default (light) */
-    pre {
-        background-color: var(--shiki-light-bg) !important;
-        color: var(--shiki-light) !important;
-    }
-    pre span {
-        color: var(--shiki-light) !important;
-    }
-    /* dark mode */
-    .dark pre {
-        background-color: var(--shiki-dark-bg) !important;
-        color: var(--shiki-dark) !important;
-    }
-    .dark pre span {
-        color: var(--shiki-dark) !important;
-    }
+  code {
+    @apply text-sm;
+  }
+  /* Shiki code blocks */
+  /* default (light) */
+  pre {
+    background-color: var(--shiki-light-bg) !important;
+    color: var(--shiki-light) !important;
+  }
+  pre span {
+    color: var(--shiki-light) !important;
+  }
+  /* dark mode */
+  .dark pre {
+    background-color: var(--shiki-dark-bg) !important;
+    color: var(--shiki-dark) !important;
+  }
+  .dark pre span {
+    color: var(--shiki-dark) !important;
+  }
 }
 
 @layer components {
-    .text-meta {
-        @apply text-xs text-text-faded sm:text-sm;
-    }
-    .form-input {
-        @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
+  .text-meta {
+    @apply text-xs text-text-faded sm:text-sm;
+  }
+  .form-input {
+    @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
 
-        /* not working: input fields filled by 1Password still get a light background color
+    /* not working: input fields filled by 1Password still get a light background color
         when my system and page are both configured to use dark mode */
-        @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
-    }
-    .icon-scale {
-        @apply transition duration-300 ease-in-out hover:scale-125;
-    }
+    @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
+  }
+  .icon-scale {
+    @apply transition duration-300 ease-in-out hover:scale-125;
+  }
 }
