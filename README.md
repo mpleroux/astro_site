@@ -29,7 +29,6 @@ URL: [mleroux.me](https://mleroux.me)
 
 ## Improvements
 
-- [ ] Projects page
 - [ ] Photo gallery
 
 ## Run locally
