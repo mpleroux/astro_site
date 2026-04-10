@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Page not found";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+
+  <p>That page doesn't exist. <a href="/">Go home</a></p>
+</BaseLayout>
