@@ -15,7 +15,7 @@ Live URL: [mleroux.me](https://mleroux.me)
     - Tags
     - Code snippet styling
     - An RSS feed
-    - A "archive" list of all posts
+    - An "archive" list of all posts
 - Projects page featuring GitHub repos and live deployed versions
 - Work page with resumé
 
