@@ -6,7 +6,9 @@ import { formatDate } from "../utils/format";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout
+  pageTitle={frontmatter.title}
+  description?={frontmatter.description}>
   <p>
     <a class="text-faded" href="/blog"
       ><span aria-hidden="true">&larr;</span> Blog</a

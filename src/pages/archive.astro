@@ -10,9 +10,10 @@ const sortedPosts = allPosts.sort(
 );
 
 const pageTitle = "Blog Archive";
+const description = "List of blog posts";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
   <p>
     <a class="text-faded" href="/blog"
       ><span aria-hidden="true">&larr;</span> Blog</a

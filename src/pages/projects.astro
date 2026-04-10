@@ -2,8 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
-const pageTitle = "Projects";
-
 const projects = [
   {
     title: "Astro site",
@@ -20,9 +18,13 @@ const projects = [
     tags: ["Tailwind CSS", "Claude Code"],
   },
 ];
+
+const pageTitle = "Projects";
+const description =
+  "Personal web development projects with links to code repos and live demos";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
   <h1>{pageTitle}</h1>
 
   <section class="grid grid-cols-1 gap-4 xs:grid-cols-2">
