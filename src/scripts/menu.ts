@@ -1,5 +1,5 @@
 const navMenu = document.getElementById("main-menu");
-const menu = document.querySelector(".menu");
+const menu = document.querySelector<HTMLButtonElement>(".menu");
 
 menu?.addEventListener("click", () => {
   const isExpanded = menu.getAttribute("aria-expanded") === "true";
