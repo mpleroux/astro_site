@@ -1,23 +1,23 @@
 # README
 
-A project to build a personal website using Astro. This will eventually include a blog, a photo gallery, and some web development projects.
+A project to build a personal website using Astro. This will eventually include a blog, a photo gallery, and some web development projects. I used Astro's excellent [build a blog](https://docs.astro.build/en/tutorial/0-introduction/) tutorial as a starting point.
 
-URL: [mleroux.me](https://mleroux.me)
+Live URL: [mleroux.me](https://mleroux.me)
 
 ## Features
 
 - Responsive design with mobile dropdown menu
-- Nearly all styling handled by Tailwind CSS utility classes
+- Tailwind CSS utility classes handle almost all styling
 - Light/dark mode switcher
+- SVG icons for social and contact links
 - Simple weblog:
     - Pagination
     - Tags
     - Code snippet styling
-    - An RSS feed, and an archive list of posts
-- Projects page featuring GitHub repos and live versions deployed on Netlify
+    - An RSS feed
+    - A "archive" list of all posts
+- Projects page featuring GitHub repos and live deployed versions
 - Work page with resumé
-- SVG icons for social and contact links
-- Application automatically deployed to Netlify after each repo update
 
 ## Tech Stack
 
@@ -29,7 +29,7 @@ URL: [mleroux.me](https://mleroux.me)
 
 ## Improvements
 
-- [ ] Photo gallery
+- [ ] Custom photo gallery
 
 ## Run locally
 
