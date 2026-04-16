@@ -15,7 +15,7 @@
       "files": "*.md",
       "options": {
         "parser": "markdown"
-      },
+      }
     }
   ],
   "tailwindStylesheet": "./src/styles/global.css"
