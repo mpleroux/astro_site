@@ -22,7 +22,7 @@ const { title, description, repoUrl, liveUrl, tags } = Astro.props;
     {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
   </p>
 
-  <ul class="m-0 mt-auto flex list-none p-0 text-sm text-text-faded">
+  <ul class="m-0 mt-auto flex list-none flex-wrap p-0 text-sm text-text-faded">
     {tags.map((tag) => <li class="pr-3">{tag}</li>)}
   </ul>
 </article>
