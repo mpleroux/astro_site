@@ -2,8 +2,6 @@
 
 A project to build a personal website using Astro. This will eventually include a blog, a photo gallery, and some web development projects. I used Astro's excellent [build a blog](https://docs.astro.build/en/tutorial/0-introduction/) tutorial as a starting point.
 
-Live URL: [mleroux.me](https://mleroux.me)
-
 ## Features
 
 - Responsive design with mobile dropdown menu
