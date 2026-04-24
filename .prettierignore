@@ -1,0 +1,4 @@
+# prettier can't handle encoded email addresses
+# and using <!-- prettier-ignore --> mangles the HTML
+src/pages/index.astro
+src/pages/work.astro
