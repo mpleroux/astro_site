@@ -1,8 +1,0 @@
-# Disable prettier in files where I encode my email address
-# There's no setting to disable its automatic conversion of HTML entities
-src/pages/index.astro
-src/pages/work.astro
-
-# I attempted to use  <!-- prettier-ignore -->, but it deletes the beginning
-# of the next HTML tag, possibly related to this bug:
-# https://github.com/withastro/prettier-plugin-astro/issues/338
