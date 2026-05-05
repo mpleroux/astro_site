@@ -42,12 +42,27 @@ const description =
   <h1>{pageTitle}</h1>
 
   <p class="mb-8">
-    My GitHub account: <a href="https://github.com/mpleroux"
+    My GitHub account is at <a href="https://github.com/mpleroux"
       >github.com/mpleroux</a
-    >
+    >.
   </p>
 
-  <section class="grid grid-cols-1 gap-4 xs:grid-cols-2">
+  <section class="mb-8 grid grid-cols-1 gap-4 xs:grid-cols-2">
     {projects.map((project) => <ProjectCard {...project} />)}
   </section>
+
+  <p>
+    <b>Next Up:</b>
+
+    <ul>
+      <li>
+        I'm currently finishing the <a
+          href="https://nextjs.org/learn/dashboard-app">Next.js App Router</a
+        > course. My progress and notes are at <a
+          href="https://github.com/mpleroux/next_app_router">next_app_router</a
+        >.
+      </li>
+      <li>A new web bookmarking project written with React and Next.js</li>
+    </ul>
+  </p>
 </BaseLayout>
