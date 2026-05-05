@@ -38,10 +38,13 @@ const description =
   "Personal web development projects with links to code repos and live demos";
 ---
 
-<BaseLayout pageTitle={pageTitle} description={description}>
+<BaseLayout
+  pageTitle={pageTitle}
+  description={description}
+  mainClass="md:max-w-4xl">
   <h1>{pageTitle}</h1>
 
-  <section class="mb-8 grid grid-cols-1 gap-4 xs:grid-cols-2">
+  <section class="mb-8 grid grid-cols-1 gap-4 xs:grid-cols-2 md:grid-cols-3">
     {projects.map((project) => <ProjectCard {...project} />)}
   </section>
 
@@ -52,17 +55,21 @@ const description =
   </p>
 
   <p>
-    <b>Next Up:</b>
+    <b>Updates:</b>
 
     <ul>
       <li>
-        I'm currently finishing the extensive <a
+        I recently finished the extensive <a
           href="https://nextjs.org/learn/dashboard-app">Next.js App Router</a
-        > course. My progress and notes are at <a
-          href="https://github.com/mpleroux/next_app_router">next_app_router</a
+        > course. My notes are at <a
+          href="https://github.com/mpleroux/next_app_router/blob/main/README.md"
+          >next_app_router</a
         >.
       </li>
-      <li>A new web bookmarking project written with React and Next.js</li>
+      <li>
+        I'm currently developing a web bookmarking app using React and Next.js.
+        More to come soon.
+      </li>
     </ul>
   </p>
 </BaseLayout>

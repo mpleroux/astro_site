@@ -5,9 +5,10 @@ import "../styles/global.css";
 interface Props {
   pageTitle: string;
   description?: string;
+  mainClass?: string;
 }
 
-const { pageTitle, description } = Astro.props;
+const { pageTitle, description, mainClass = "md:max-w-3xl" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -32,7 +33,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <Header />
 
     <main
-      class="mx-auto animate-fade-in px-4 text-sm leading-normal sm:max-w-2xl sm:px-6 sm:text-base md:max-w-3xl">
+      class={`mx-auto animate-fade-in px-4 text-sm leading-normal sm:max-w-2xl sm:px-6 sm:text-base ${mainClass}`}>
       <slot />
     </main>
 
