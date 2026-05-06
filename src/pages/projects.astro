@@ -4,6 +4,13 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = [
   {
+    title: "Web Bookmarks",
+    description:
+      "A simple website bookmarking site modeled on Pinboard using React and Next.js. Work-in-progress.",
+    repoUrl: "https://github.com/mpleroux/web_bookmarks",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Supabase"],
+  },
+  {
     title: "Trivia Quiz",
     description: "Multiple choice trivia game using React and Open Trivia DB.",
     repoUrl: "https://github.com/mpleroux/trivia_quiz",
@@ -29,7 +36,7 @@ const projects = [
     description:
       "An experiment to vibecode a barebones, single user clone of the social bookmarking website Pinboard using Claude Code.",
     repoUrl: "https://github.com/mpleroux/pinboard_vibecode",
-    tags: ["Tailwind CSS", "Alpine.js", "Claude Code"],
+    tags: ["JavaScript", "Tailwind CSS", "Alpine.js", "Claude Code"],
   },
 ];
 
@@ -44,33 +51,37 @@ const description =
   mainClass="md:max-w-4xl">
   <h1>{pageTitle}</h1>
 
+  <section class="mb-8">
+    <p>
+      My GitHub account is at <a href="https://github.com/mpleroux"
+        >github.com/mpleroux</a
+      >.
+    </p>
+  </section>
+
   <section
     class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
     {projects.map((project) => <ProjectCard {...project} />)}
   </section>
 
-  <p>
-    My GitHub account is at <a href="https://github.com/mpleroux"
-      >github.com/mpleroux</a
-    >.
-  </p>
-
-  <p>
+  <section>
     <b>Updates:</b>
 
     <ul>
       <li>
-        I recently finished the extensive <a
-          href="https://nextjs.org/learn/dashboard-app">Next.js App Router</a
+        I recently finished Next.js extensive <a
+          href="https://nextjs.org/learn/dashboard-app">App Router Dashboard</a
         > course. My notes are at <a
           href="https://github.com/mpleroux/next_app_router/blob/main/README.md"
           >next_app_router</a
         >.
       </li>
       <li>
-        I'm currently developing a web bookmarking app using React and Next.js.
-        More to come soon.
+        I've started developing a <a
+          href="https://github.com/mpleroux/web_bookmarks"
+          >web bookmarking app</a
+        > using React and Next.js.
       </li>
     </ul>
-  </p>
+  </section>
 </BaseLayout>
