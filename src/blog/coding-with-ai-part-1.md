@@ -1,5 +1,5 @@
 ---
-title: "Coding with AI"
+title: "Coding with AI: Part 1"
 pubDate: 2026-05-06
 author: "Michael LeRoux"
 tags: ["ai", "claude", "web-development"]
