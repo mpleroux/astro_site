@@ -28,6 +28,12 @@
   --color-nav-active: var(--color-gray-300);
   --color-form-input: var(--color-gray-300);
 
+  /* Code colors (used for both inline code and code blocks) */
+  --color-code-light-bg: #dadee4;
+  --color-code-light: #383a42;
+  --color-code-dark-bg: #0f172a;
+  --color-code-dark: #e2e8f0;
+
   /* no dark equivalents for now */
   --color-button: var(--color-blue-600);
   --color-button-hover: var(--color-blue-700);
@@ -78,9 +84,6 @@
   a {
     @apply text-link underline transition-opacity hover:opacity-80;
   }
-  pre {
-    @apply mb-4 px-4 py-2 text-xs sm:text-sm;
-  }
   button {
     @apply hover:cursor-pointer;
   }
@@ -94,23 +97,45 @@
   }
 
   code {
-    @apply text-sm;
+    @apply text-[0.8125rem];
   }
+
+  /* Inline code (single backticks, not in pre blocks) */
+  code:not(pre code) {
+    @apply rounded px-1.5 py-0.5;
+    background-color: var(--color-code-light-bg);
+    color: var(--color-code-light);
+  }
+
+  .dark code:not(pre code) {
+    @apply rounded px-1.5 py-0.5;
+    background-color: var(--color-code-dark-bg);
+    color: var(--color-code-dark);
+  }
+
   /* Shiki code blocks */
   /* default (light) */
   pre {
+    @apply mb-4 px-4 py-2 text-[0.8125rem];
+    --shiki-light-bg: var(--color-code-light-bg) !important;
+    --shiki-light: var(--color-code-light) !important;
     background-color: var(--shiki-light-bg) !important;
     color: var(--shiki-light) !important;
   }
   pre span {
+    @apply text-[0.8125rem];
     color: var(--shiki-light) !important;
   }
-  /* dark mode */
+
+  /* dark mode - with Shiki color overrides */
   .dark pre {
+    --shiki-dark-bg: var(--color-code-dark-bg) !important;
+    --shiki-dark: var(--color-code-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
     color: var(--shiki-dark) !important;
   }
   .dark pre span {
+    @apply text-[0.8125rem];
     color: var(--shiki-dark) !important;
   }
 }
