@@ -2,7 +2,7 @@
 title: "Coding with AI: Part 1"
 pubDate: 2026-05-06
 author: "Michael LeRoux"
-tags: ["ai", "claude", "web-development"]
+tags: ["ai", "claude", "vscode", "web-development"]
 ---
 
 My experience with using a large language model to help me write code has been surprisingly positive so far, especially given how problematic LLMs can be in most other walks of life. And it's been much more useful than I expected.
