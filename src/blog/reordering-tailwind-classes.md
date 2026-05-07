@@ -2,7 +2,7 @@
 title: 'Reordering Tailwind classes in Astro using Prettier'
 pubDate: 2026-03-06
 author: 'Michael LeRoux'
-tags: ['astro', 'tailwind', 'prettier', 'vscode']
+tags: ['astro', 'tailwind', 'prettier', 'vscode', "web-development"]
 ---
 
 Yesterday I spent some time getting VSCode [Prettier](https://prettier.io/) plugins to work with both [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). I wanted Prettier to automatically reorder Tailwind's utility classes in HTML, CSS, and Astro files.
