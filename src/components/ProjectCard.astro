@@ -23,6 +23,10 @@ const { title, description, repoUrl, liveUrl, tags } = Astro.props;
   </p>
 
   <ul class="m-0 mt-auto flex list-none flex-wrap p-0 text-xs text-text-faded">
-    {tags.map((tag) => <li class="pr-3">{tag}</li>)}
+    {
+      tags.map((tag, index) => (
+        <li>{`${tag}${index < tags.length - 1 ? ",\u00A0" : ""}`}</li>
+      ))
+    }
   </ul>
 </article>
