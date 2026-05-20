@@ -2,7 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  tags: string[];
+};
+
+const projects: Project[] = [
   {
     title: "Web Bookmarks",
     description:
@@ -41,6 +49,16 @@ const projects = [
   },
 ];
 
+const nextProject: Project[] = [
+  {
+    title: "Weather App",
+    description:
+      "A weather dashboard showing current conditions, today's forecast, and a 7-day forecast.",
+    // repoUrl: "https://github.com/mpleroux/weather_app",
+    tags: ["Vue.js", "Nuxt", "Nuxt UI", "Tailwind CSS", "Open-Meteo"],
+  },
+];
+
 const pageTitle = "Projects";
 const description =
   "Personal web development projects with links to code repos and live demos";
@@ -52,20 +70,32 @@ const description =
   mainClass="md:max-w-4xl">
   <h1>{pageTitle}</h1>
 
-  <section
-    class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
-    {projects.map((project) => <ProjectCard {...project} />)}
-  </section>
-
-  <section>
+  <section class="mb-8">
     <p>
       My GitHub account with a bunch of other repos is at <a
         href="https://github.com/mpleroux">github.com/mpleroux</a
       >.
     </p>
-
-    <p>
-      <b>In progress:</b> A weather app using Vue.js, Nuxt, and Nuxt UI.
-    </p>
   </section>
+
+  <h2>Recent</h2>
+
+  <section
+    class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
+
+  {
+    nextProject.length > 0 && (
+      <>
+        <h2>In Progress</h2>
+
+        <section class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
+          {nextProject.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </section>
+      </>
+    )
+  }
 </BaseLayout>

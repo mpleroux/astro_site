@@ -2,7 +2,7 @@
 interface Props {
   title: string;
   description: string;
-  repoUrl: string;
+  repoUrl?: string;
   liveUrl?: string;
   tags: string[];
 }
@@ -11,16 +11,24 @@ const { title, description, repoUrl, liveUrl, tags } = Astro.props;
 ---
 
 <article class="flex flex-col rounded-2xl border p-4">
-  <h2 class="text-xl">{title}</h2>
+  <h3>{title}</h3>
 
   <p>
     {description}
   </p>
 
-  <p class="flex">
-    <a class="pr-4" href={repoUrl}>Code &rarr;</a>
-    {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
-  </p>
+  {
+    (repoUrl || liveUrl) && (
+      <p class="flex">
+        {repoUrl && (
+          <a class="pr-4" href={repoUrl}>
+            Code &rarr;
+          </a>
+        )}
+        {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
+      </p>
+    )
+  }
 
   <ul class="m-0 mt-auto flex list-none flex-wrap p-0 text-xs text-text-faded">
     {
