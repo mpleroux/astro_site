@@ -2,11 +2,13 @@
 const { tags } = Astro.props as { tags: string[] };
 ---
 
-<div class="flex flex-wrap text-xs">
+<div class="flex flex-wrap text-sm">
   Tags:
-  {tags.map((tag) => (
-    <span class="pl-1">
-      <a href={`/tags/${tag}`}>{tag}</a>
-    </span>
-  ))}
+  {
+    tags.map((tag) => (
+      <span class="pl-1">
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </span>
+    ))
+  }
 </div>

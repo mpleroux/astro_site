@@ -142,7 +142,7 @@
 
 @layer components {
   .text-meta {
-    @apply text-xs text-text-faded sm:text-sm;
+    @apply text-sm text-text-faded;
   }
   .form-input {
     @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
