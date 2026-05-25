@@ -26,6 +26,8 @@
 </button>
 
 <script is:inline>
+  // Runs inline (before hydration) to avoid a flash of the wrong theme on load.
+  // Toggle the dark class and persist the preference to localStorage.
   document
     .getElementById("themeToggle")
     ?.addEventListener("click", function () {

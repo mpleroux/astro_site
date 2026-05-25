@@ -6,10 +6,12 @@ import BlogPost from "../../components/BlogPost.astro";
 export async function getStaticPaths() {
   const allPosts = await getCollection("blog");
 
+  // Collect all tags across posts, deduplicating with Set
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.data.tags).flat()),
   ];
 
+  // Generate one route per tag, attaching only the posts that use it
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
       post.data.tags.includes(tag),

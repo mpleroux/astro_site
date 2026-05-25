@@ -1,3 +1,4 @@
+// Toggle the mobile nav open/closed, keeping aria-expanded in sync for accessibility
 const navMenu = document.getElementById("main-menu");
 const menu = document.querySelector<HTMLButtonElement>(".menu");
 

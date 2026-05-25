@@ -1,10 +1,8 @@
-// Import the glob loader
+// Define blog content collection with its glob loader and validation schema
 import { glob } from "astro/loaders";
-// Import utilities from `astro:content`
 import { defineCollection } from "astro:content";
-// Import Zod
 import { z } from "astro/zod";
-// Define a `loader` and `schema` for each collection
+
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/blog" }),
   schema: z.object({
@@ -15,5 +13,6 @@ const blog = defineCollection({
     tags: z.array(z.string()),
   }),
 });
+
 // Export a single `collections` object to register your collection(s)
 export const collections = { blog };

@@ -15,6 +15,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
 
+// Pre-render each post's content so it can be displayed inline on the index page
 const postsData = await Promise.all(
   page.data.map(async (post: CollectionEntry<"blog">) => {
     const { Content } = await render(post);
