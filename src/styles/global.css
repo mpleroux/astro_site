@@ -21,7 +21,7 @@
   /* set default (light mode) values */
   --color-page-bg: var(--color-slate-100);
   --color-page-text: var(--color-slate-800);
-  --color-link: var(--color-slate-600);
+  --color-link: var(--color-slate-500);
   --color-text-faded: var(--color-slate-600);
   --color-nav: var(--color-slate-200);
   --color-nav-hover: var(--color-slate-300);
@@ -33,17 +33,13 @@
   --color-code-light: #383a42;
   --color-code-dark-bg: #0f172a;
   --color-code-dark: #e2e8f0;
-
-  /* no dark equivalents for now */
-  --color-button: var(--color-blue-600);
-  --color-button-hover: var(--color-blue-700);
 }
 
 /* manual toggle: if .dark class is on <html> */
 .dark {
   --color-page-bg: var(--color-slate-800);
   --color-page-text: var(--color-slate-200);
-  --color-link: var(--color-blue-400);
+  --color-link: var(--color-slate-400);
   --color-text-faded: var(--color-slate-400);
   --color-nav: var(--color-slate-700);
   --color-nav-hover: var(--color-slate-600);
@@ -82,7 +78,7 @@
     @apply mb-0 list-[circle];
   }
   a {
-    @apply text-link underline transition-opacity hover:opacity-80;
+    @apply text-link underline transition-opacity hover:opacity-75;
   }
   button {
     @apply hover:cursor-pointer;
