@@ -79,13 +79,6 @@ const description =
     </p>
   </section>
 
-  <h2>Recent</h2>
-
-  <section
-    class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
-    {projects.map((project) => <ProjectCard {...project} />)}
-  </section>
-
   {
     nextProject.length > 0 && (
       <>
@@ -99,4 +92,11 @@ const description =
       </>
     )
   }
+
+  <h2>Recent</h2>
+
+  <section
+    class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
 </BaseLayout>
