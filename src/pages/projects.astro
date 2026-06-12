@@ -10,7 +10,23 @@ type Project = {
   tags: string[];
 };
 
+const nextProject: Project[] = [
+  {
+    title: "Feed Reader",
+    description: "A single-user RSS/Atom reader built with Python and Django.",
+    tags: ["Python", "Django", "Feedparser", "Tailwind CSS"],
+  },
+];
+
 const projects: Project[] = [
+  {
+    title: "Weather App",
+    description:
+      "A weather dashboard showing current conditions, today's forecast, and a 7-day forecast.",
+    repoUrl: "https://github.com/mpleroux/weather_app",
+    liveUrl: "https://mpleroux-weather-app.netlify.app/",
+    tags: ["Vue.js", "Nuxt", "Nuxt UI", "Tailwind CSS", "Open-Meteo"],
+  },
   {
     title: "Web Bookmarks",
     description:
@@ -46,17 +62,6 @@ const projects: Project[] = [
       "This website! Astro handles the structure and Tailwind handles the styling.",
     repoUrl: "https://github.com/mpleroux/astro_site",
     tags: ["Astro", "Tailwind CSS", "TypeScript"],
-  },
-];
-
-const nextProject: Project[] = [
-  {
-    title: "Weather App",
-    description:
-      "A weather dashboard showing current conditions, today's forecast, and a 7-day forecast.",
-    repoUrl: "https://github.com/mpleroux/weather_app",
-    liveUrl: "https://mpleroux-weather-app.netlify.app/",
-    tags: ["Vue.js", "Nuxt", "Nuxt UI", "Tailwind CSS", "Open-Meteo"],
   },
 ];
 
