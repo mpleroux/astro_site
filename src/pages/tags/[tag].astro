@@ -13,9 +13,9 @@ export async function getStaticPaths() {
 
   // Generate one route per tag, attaching only the posts that use it
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag),
-    );
+    const filteredPosts = allPosts
+      .filter((post) => post.data.tags.includes(tag))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     return {
       params: { tag },
       props: { posts: filteredPosts },
