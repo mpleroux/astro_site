@@ -13,20 +13,29 @@ const description = "Web Developer based in Somerville, MA";
 
 <BaseLayout pageTitle={pageTitle} description={description}>
   <section class="mb-16 flex flex-col gap-4 sm:flex-row">
+    <!-- Intro -->
     <div>
       <h1>Hi, I'm Mike.</h1>
 
       <p>
-        I'm a lifelong New Englander who enjoys photography, exploring this
-        wonderful part of the country, improving my web development skills, and
-        too many other things to mention.
+        I'm a lifelong New Englander and I created this website to have <a
+          href="./posts/starting-from-scratch/">my own corner</a
+        > of the internet again.
       </p>
 
       <p>
-        My plans for this new website are to host a blog, some of my favorite
-        photos, and personal software projects.
+        I'm also building a portfolio of personal <a href="/projects"
+          >software projects</a
+        > to demonstrate my <a href="/work">web development experience</a> during
+        my job search.
       </p>
 
+      <p class="mb-8">
+        My other plans are to get back into the habit of blogging regularly and
+        to create a custom gallery for my favorite photos.
+      </p>
+
+      <!-- Social links -->
       <div class="flex gap-4">
         <a
           class="icon-scale"
@@ -109,6 +118,7 @@ const description = "Web Developer based in Somerville, MA";
       </div>
     </div>
 
+    <!-- Photo -->
     <Image
       class="self-start rounded-full object-cover"
       width="150"
@@ -120,6 +130,7 @@ const description = "Web Developer based in Somerville, MA";
   </section>
 
   <section class="text-meta flex items-center gap-1.5">
+    <!-- Tech stack -->
     Built with
     <a
       class="icon-scale"
