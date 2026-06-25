@@ -83,6 +83,9 @@
   button {
     @apply hover:cursor-pointer;
   }
+  blockquote {
+    @apply mb-4 border-l-4 border-text-faded pl-4 text-text-faded italic;
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *,
