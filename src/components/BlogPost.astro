@@ -8,7 +8,7 @@ interface Props {
 const { date, url, title } = Astro.props;
 
 const d = new Date(date);
-const formattedDate = `${d.getUTCFullYear()} ${d.toLocaleDateString("en-US", { month: "short", timeZone: "UTC" })} ${d.getUTCDate()}`;
+const formattedDate = `${d.toLocaleDateString("en-US", { month: "short", timeZone: "UTC" })} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
 ---
 
 <li>
