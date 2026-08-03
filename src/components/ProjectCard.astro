@@ -15,7 +15,7 @@ const { title, description, repoUrl, liveUrl, tags, image } = Astro.props;
 ---
 
 <article
-  class="group flex flex-col overflow-hidden rounded-2xl border transition-all xs:flex-row">
+  class="group flex flex-col overflow-hidden rounded-2xl border border-page-text/80 transition-all hover:border-page-text/40 xs:flex-row">
   {
     image && (
       <div class="aspect-4/3 w-full shrink-0 overflow-hidden bg-nav group-hover:opacity-75 xs:w-36 md:w-64">
@@ -30,8 +30,7 @@ const { title, description, repoUrl, liveUrl, tags, image } = Astro.props;
     )
   }
 
-  <div
-    class="flex flex-1 flex-col p-4 transition-colors duration-300 group-hover:bg-nav-hover">
+  <div class="flex flex-1 flex-col p-4">
     <h3>{title}</h3>
 
     <p>
@@ -40,17 +39,20 @@ const { title, description, repoUrl, liveUrl, tags, image } = Astro.props;
 
     {
       (repoUrl || liveUrl) && (
-        <p class="flex">
+        <p class="flex gap-3">
           {repoUrl && (
-            <a class="pr-4" href={repoUrl}>
+            <a class="btn-secondary" href={repoUrl}>
               Code &rarr;
             </a>
           )}
-          {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
+          {liveUrl && (
+            <a class="btn-primary" href={liveUrl}>
+              Live &rarr;
+            </a>
+          )}
         </p>
       )
     }
-
     <ul
       class="m-0 mt-auto flex list-none flex-wrap p-0 text-xs text-text-faded">
       {

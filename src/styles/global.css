@@ -21,12 +21,13 @@
   /* set default (light mode) values */
   --color-page-bg: var(--color-slate-100);
   --color-page-text: var(--color-slate-800);
+  --color-btn-primary: var(--color-slate-800);
+  --color-btn-primary-text: var(--color-slate-100);
   --color-link: var(--color-slate-500);
   --color-text-faded: var(--color-slate-600);
   --color-nav: var(--color-slate-200);
   --color-nav-hover: var(--color-slate-300);
   --color-nav-active: var(--color-slate-300);
-  --color-form-input: var(--color-slate-300);
 
   /* Code colors (used for both inline code and code blocks) */
   --color-code-light-bg: #dadee4;
@@ -39,12 +40,13 @@
 .dark {
   --color-page-bg: var(--color-slate-800);
   --color-page-text: var(--color-slate-200);
+  --color-btn-primary: var(--color-blue-200);
+  --color-btn-primary-text: var(--color-slate-800);
   --color-link: var(--color-slate-400);
   --color-text-faded: var(--color-slate-400);
   --color-nav: var(--color-slate-700);
   --color-nav-hover: var(--color-slate-600);
   --color-nav-active: var(--color-slate-500);
-  --color-form-input: var(--color-slate-600);
 }
 
 /* add basic styles after Preflight */
@@ -143,14 +145,13 @@
   .text-meta {
     @apply text-sm text-text-faded;
   }
-  .form-input {
-    @apply w-full rounded-md border border-transparent bg-form-input p-2.5 transition outline-none focus-visible:border-blue-600/70 focus-visible:ring-2 focus-visible:ring-blue-600/50;
-
-    /* not working: input fields filled by 1Password still get a light background color
-        when my system and page are both configured to use dark mode */
-    @apply data-com-onepassword-filled:bg-form-input! data-com-onepassword-filled:text-page-text!;
-  }
   .icon-scale {
     @apply transition duration-300 ease-in-out hover:scale-125;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-1 rounded-xl border border-page-text/40 px-3 py-1.5 text-sm text-page-text no-underline transition-colors duration-300 hover:bg-nav-hover/40 hover:opacity-100;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-1 rounded-xl bg-btn-primary px-3 py-1.5 text-sm text-btn-primary-text no-underline transition-colors duration-300 hover:opacity-90;
   }
 }
