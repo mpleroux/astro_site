@@ -1,40 +1,63 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   title: string;
   description: string;
   repoUrl?: string;
   liveUrl?: string;
   tags: string[];
+  image?: ImageMetadata;
 }
 
-const { title, description, repoUrl, liveUrl, tags } = Astro.props;
+const { title, description, repoUrl, liveUrl, tags, image } = Astro.props;
 ---
 
-<article class="flex flex-col rounded-2xl border p-4">
-  <h3>{title}</h3>
-
-  <p>
-    {description}
-  </p>
-
+<article
+  class="group flex flex-col overflow-hidden rounded-2xl border transition-all xs:flex-row">
   {
-    (repoUrl || liveUrl) && (
-      <p class="flex">
-        {repoUrl && (
-          <a class="pr-4" href={repoUrl}>
-            Code &rarr;
-          </a>
-        )}
-        {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
-      </p>
+    image && (
+      <div class="aspect-4/3 w-full shrink-0 overflow-hidden bg-nav group-hover:opacity-75 xs:w-36 md:w-64">
+        <Image
+          src={image}
+          alt={title}
+          width={800}
+          height={600}
+          class="h-full w-full object-cover object-top duration-300"
+        />
+      </div>
     )
   }
 
-  <ul class="m-0 mt-auto flex list-none flex-wrap p-0 text-xs text-text-faded">
+  <div
+    class="flex flex-1 flex-col p-4 transition-colors duration-300 group-hover:bg-nav-hover">
+    <h3>{title}</h3>
+
+    <p>
+      {description}
+    </p>
+
     {
-      tags.map((tag, index) => (
-        <li>{`${tag}${index < tags.length - 1 ? ",\u00A0" : ""}`}</li>
-      ))
+      (repoUrl || liveUrl) && (
+        <p class="flex">
+          {repoUrl && (
+            <a class="pr-4" href={repoUrl}>
+              Code &rarr;
+            </a>
+          )}
+          {liveUrl && <a href={liveUrl}>Live &rarr;</a>}
+        </p>
+      )
     }
-  </ul>
+
+    <ul
+      class="m-0 mt-auto flex list-none flex-wrap p-0 text-xs text-text-faded">
+      {
+        tags.map((tag, index) => (
+          <li>{`${tag}${index < tags.length - 1 ? ",\u00A0" : ""}`}</li>
+        ))
+      }
+    </ul>
+  </div>
 </article>

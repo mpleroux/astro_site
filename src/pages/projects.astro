@@ -1,6 +1,12 @@
 ---
+import type { ImageMetadata } from "astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import weatherAppImage from "../assets/projects/weather-app.png";
+import webBookmarksImage from "../assets/projects/web-bookmarks.png";
+import triviaQuizImage from "../assets/projects/trivia-quiz.png";
+import astroSiteImage from "../assets/projects/astro-site.png";
+import feedReaderImage from "../assets/projects/feed-reader.png";
 
 type Project = {
   title: string;
@@ -8,18 +14,8 @@ type Project = {
   repoUrl?: string;
   liveUrl?: string;
   tags: string[];
+  image?: ImageMetadata;
 };
-
-const nextProject: Project[] = [
-  {
-    title: "Feed Reader",
-    description:
-      "A single-user RSS/Atom feed reader built with Python and Django.",
-    repoUrl: "https://github.com/mpleroux/feed_reader",
-    liveUrl: "https://feed-reader-9jin.onrender.com/",
-    tags: ["Python", "Django", "Feedparser", "Tailwind CSS"],
-  },
-];
 
 const projects: Project[] = [
   {
@@ -29,6 +25,7 @@ const projects: Project[] = [
     repoUrl: "https://github.com/mpleroux/weather_app",
     liveUrl: "https://mpleroux-weather-app.netlify.app/",
     tags: ["Vue.js", "Nuxt", "Nuxt UI", "Tailwind CSS", "Open-Meteo"],
+    image: weatherAppImage,
   },
   {
     title: "Web Bookmarks",
@@ -44,6 +41,7 @@ const projects: Project[] = [
       "Supabase",
       "@supabase/ssr",
     ],
+    image: webBookmarksImage,
   },
   {
     title: "Trivia Quiz",
@@ -58,6 +56,7 @@ const projects: Project[] = [
       "Jest",
       "Open Trivia DB",
     ],
+    image: triviaQuizImage,
   },
   {
     title: "Astro Site",
@@ -65,6 +64,19 @@ const projects: Project[] = [
       "This website! Astro handles the structure and Tailwind handles the styling.",
     repoUrl: "https://github.com/mpleroux/astro_site",
     tags: ["Astro", "Tailwind CSS", "TypeScript"],
+    image: astroSiteImage,
+  },
+];
+
+const nextProject: Project[] = [
+  {
+    title: "Feed Reader",
+    description:
+      "A single-user RSS/Atom feed reader built with Python and Django.",
+    repoUrl: "https://github.com/mpleroux/feed_reader",
+    liveUrl: "https://feed-reader-9jin.onrender.com/",
+    tags: ["Python", "Django", "Feedparser", "Tailwind CSS"],
+    image: feedReaderImage,
   },
 ];
 
@@ -87,12 +99,18 @@ const description =
     </p>
   </section>
 
+  <h2>Recent</h2>
+
+  <section class="mb-8 flex flex-col gap-6 text-sm">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
+
   {
     nextProject.length > 0 && (
       <>
         <h2>In Progress</h2>
 
-        <section class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
+        <section class="mb-8 flex flex-col gap-6 text-sm">
           {nextProject.map((project) => (
             <ProjectCard {...project} />
           ))}
@@ -100,11 +118,4 @@ const description =
       </>
     )
   }
-
-  <h2>Recent</h2>
-
-  <section
-    class="mb-8 grid grid-cols-1 gap-4 text-sm xs:grid-cols-2 md:grid-cols-3">
-    {projects.map((project) => <ProjectCard {...project} />)}
-  </section>
 </BaseLayout>
