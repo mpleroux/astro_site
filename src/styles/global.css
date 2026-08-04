@@ -22,6 +22,7 @@
   --color-page-bg: var(--color-slate-100);
   --color-page-text: var(--color-slate-800);
   --color-btn-primary: var(--color-slate-800);
+  --color-btn-primary-hover: var(--color-slate-700);
   --color-btn-primary-text: var(--color-slate-100);
   --color-link: var(--color-slate-500);
   --color-text-faded: var(--color-slate-600);
@@ -41,6 +42,7 @@
   --color-page-bg: var(--color-slate-800);
   --color-page-text: var(--color-slate-200);
   --color-btn-primary: var(--color-blue-200);
+  --color-btn-primary-hover: var(--color-blue-300);
   --color-btn-primary-text: var(--color-slate-800);
   --color-link: var(--color-slate-400);
   --color-text-faded: var(--color-slate-400);
@@ -149,9 +151,9 @@
     @apply transition duration-300 ease-in-out hover:scale-125;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-1 rounded-xl border border-page-text/40 px-3 py-1.5 text-sm text-page-text no-underline transition-colors duration-300 hover:bg-nav-hover/40 hover:opacity-100;
+    @apply inline-flex items-center gap-1 rounded-xl border border-page-text/40 px-3 py-1.5 text-sm text-page-text no-underline transition-colors duration-300 hover:bg-nav-hover/30;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-1 rounded-xl bg-btn-primary px-3 py-1.5 text-sm text-btn-primary-text no-underline transition-colors duration-300 hover:opacity-90;
+    @apply inline-flex items-center gap-1 rounded-xl bg-btn-primary px-3 py-1.5 text-sm text-btn-primary-text no-underline transition-colors duration-300 hover:bg-btn-primary-hover;
   }
 }
