@@ -9,10 +9,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       defaultColor: false,
-      themes: {
-        light: "light-plus",
-        dark: "dark-plus",
-      },
+      theme: "dark-plus",
       wrap: true,
     },
   },
