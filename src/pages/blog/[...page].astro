@@ -10,7 +10,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const sortedPosts = allPosts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
-  return paginate(sortedPosts, { pageSize: 3 });
+  return paginate(sortedPosts, { pageSize: 5 });
 }
 
 const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
