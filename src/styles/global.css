@@ -23,6 +23,7 @@
   --color-text-faded: var(--color-slate-400);
   --color-nav: var(--color-slate-700);
   --color-nav-active: var(--color-slate-500);
+  --color-nav-hover: var(--color-slate-600);
 
   /* Code colors (used for both inline code and code blocks) */
   --color-code-dark-bg: #0f172a;
@@ -59,10 +60,7 @@
   li > ol {
     @apply mb-0 list-[circle];
   }
-  a {
-    @apply text-link underline transition-opacity hover:opacity-75;
-  }
-  a:not(.btn-primary, .btn-secondary) {
+  a:not(.btn-primary, .btn-secondary, #main-menu a) {
     @apply text-link underline transition-opacity hover:opacity-75;
   }
   button {
