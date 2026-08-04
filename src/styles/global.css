@@ -18,12 +18,10 @@
   --color-page-bg: var(--color-slate-800);
   --color-page-text: var(--color-slate-200);
   --color-btn-primary: var(--color-blue-200);
-  --color-btn-primary-hover: var(--color-blue-300);
   --color-btn-primary-text: var(--color-slate-800);
   --color-link: var(--color-slate-400);
   --color-text-faded: var(--color-slate-400);
   --color-nav: var(--color-slate-700);
-  --color-nav-hover: var(--color-slate-600);
   --color-nav-active: var(--color-slate-500);
 
   /* Code colors (used for both inline code and code blocks) */
@@ -62,6 +60,9 @@
     @apply mb-0 list-[circle];
   }
   a {
+    @apply text-link underline transition-opacity hover:opacity-75;
+  }
+  a:not(.btn-primary, .btn-secondary) {
     @apply text-link underline transition-opacity hover:opacity-75;
   }
   button {
@@ -113,9 +114,9 @@
     @apply transition duration-300 ease-in-out hover:scale-125;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-1 rounded-xl border border-page-text/40 px-3 py-1.5 text-sm text-page-text no-underline transition-colors duration-300 hover:bg-nav-hover/30;
+    @apply inline-flex items-center gap-1 rounded-xl border border-page-text/40 px-3 py-1.5 text-sm text-page-text no-underline transition-colors duration-300 select-none hover:bg-nav/80;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-1 rounded-xl bg-btn-primary px-3 py-1.5 text-sm text-btn-primary-text no-underline transition-colors duration-300 hover:bg-btn-primary-hover;
+    @apply inline-flex items-center gap-1 rounded-xl bg-btn-primary px-3 py-1.5 text-sm text-btn-primary-text no-underline transition-colors duration-300 select-none;
   }
 }
