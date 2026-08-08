@@ -8,7 +8,6 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   markdown: {
     shikiConfig: {
-      defaultColor: false,
       theme: "dark-plus",
       wrap: true,
     },
