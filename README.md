@@ -8,16 +8,15 @@ Live demo: [mleroux.me](https://mleroux.me/)
 
 - Responsive design with mobile dropdown menu
 - Tailwind CSS utility classes handle almost all styling
-- Light/dark mode switcher
 - SVG icons for social and contact links
-- Simple weblog:
+- Simple blog:
     - Pagination
     - Tags
     - Code snippet styling
-    - An RSS feed
-    - An "archive" list of all posts
-- Projects page featuring GitHub repos and live deployed versions
-- Work page with resumé
+    - RSS feed
+    - List of all blog posts
+- Projects page featuring GitHub repos and live versions
+- Resume
 
 ## Tech Stack
 
