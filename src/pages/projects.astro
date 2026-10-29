@@ -6,7 +6,6 @@ import weatherAppImage from "../assets/projects/weather-app.png";
 import webBookmarksImage from "../assets/projects/web-bookmarks.png";
 import triviaQuizImage from "../assets/projects/trivia-quiz.png";
 import astroSiteImage from "../assets/projects/astro-site.png";
-import feedReaderImage from "../assets/projects/feed-reader.png";
 
 type Project = {
   title: string;
@@ -68,17 +67,7 @@ const projects: Project[] = [
   },
 ];
 
-const nextProject: Project[] = [
-  {
-    title: "Feed Reader",
-    description:
-      "A single-user RSS/Atom feed reader built with Python and Django.",
-    repoUrl: "https://github.com/mpleroux/feed_reader",
-    liveUrl: "https://feed-reader-9jin.onrender.com/",
-    tags: ["Python", "Django", "Feedparser", "Tailwind CSS"],
-    image: feedReaderImage,
-  },
-];
+const nextProject: Project[] = [];
 
 const pageTitle = "Projects";
 const description =
